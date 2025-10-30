@@ -9,7 +9,6 @@ public class lab2 {
         ThreadGroup G2 = new ThreadGroup(mainGroup, "G2");
         ThreadGroup G3 = new ThreadGroup(G2, "G3");
 
-        // Fire din grupul G6
         Thread ThA = new Thread(G6, "ThA");
         ThA.setPriority(3);
 
