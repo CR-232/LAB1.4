@@ -1,10 +1,8 @@
 public class lab2 {
     public static void main(String[] args) {
 
-        // Grupul principal (implicit)
         ThreadGroup mainGroup = Thread.currentThread().getThreadGroup();
 
-        // Subgrupurile conform cerinței
         ThreadGroup G6 = new ThreadGroup(mainGroup, "G6");
         ThreadGroup G2 = new ThreadGroup(mainGroup, "G2");
         ThreadGroup G3 = new ThreadGroup(G2, "G3");
@@ -12,14 +10,12 @@ public class lab2 {
         Thread ThA = new Thread(G6, "ThA");
         ThA.setPriority(3);
 
-        // Fire din grupul principal (Main)
         Thread Th1_main = new Thread(mainGroup, "Th1");
         Th1_main.setPriority(4);
 
         Thread Th2_main = new Thread(mainGroup, "Th2");
         Th2_main.setPriority(3);
 
-        // Fire din grupul G2
         Thread Th1_G2 = new Thread(G2, "Th1");
         Th1_G2.setPriority(2);
 
@@ -29,7 +25,6 @@ public class lab2 {
         Thread Th3_G2 = new Thread(G2, "Th3");
         Th3_G2.setPriority(3);
 
-        // Fire din grupul G3 (subgrup al G2)
         Thread Tha = new Thread(G3, "Tha");
         Tha.setPriority(2);
 
@@ -42,13 +37,11 @@ public class lab2 {
         Thread Thd = new Thread(G3, "Thd");
         Thd.setPriority(3);
 
-        // Afișăm informațiile pentru toate firele
         System.out.println("=== Structura de fire și grupe ===");
         printThreadInfo(mainGroup);
     }
 
     public static void printThreadInfo(ThreadGroup group) {
-        // Obținem firele din grup
         Thread[] threads = new Thread[group.activeCount()];
         group.enumerate(threads, false);
 
@@ -60,7 +53,6 @@ public class lab2 {
             }
         }
 
-        // Obținem subgrupurile și le parcurgem recursiv
         ThreadGroup[] subGroups = new ThreadGroup[group.activeGroupCount()];
         group.enumerate(subGroups, false);
 
