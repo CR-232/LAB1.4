@@ -36,12 +36,6 @@ public class DanielThread extends Thread {
             th1.join();
         } catch (InterruptedException e) {}
 
-        // mesaj final animat (opțional)
-        String text = "Daniel a terminat thread-ul.";
-        for (char c : text.toCharArray()) {
-            System.out.print(c);
-            try { Thread.sleep(80); } catch (InterruptedException e) {}
+
         }
-        System.out.println();
     }
-}

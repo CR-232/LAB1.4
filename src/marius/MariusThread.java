@@ -36,7 +36,5 @@ public class MariusThread extends Thread {
             th.start();
             th.join();
         } catch (InterruptedException e) {}
-
-        System.out.println("Marius a terminat thread-ul.");
     }
 }
