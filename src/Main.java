@@ -89,3 +89,4 @@ public class Main {
         System.out.println("Toate thread-urile au terminat.");
     }
 }
+//wdf
